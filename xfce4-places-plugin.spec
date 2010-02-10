@@ -2,7 +2,7 @@ Summary:	A places plugin for the Xfce panel
 Summary(pl.UTF-8):	Wtyczka places dla panelu Xfce
 Name:		xfce4-places-plugin
 Version:	0.3.0
-Release:	1
+Release:	3
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://goodies.xfce.org/releases/xfce4-places-plugin/%{name}-%{version}.tar.bz2
