@@ -1,22 +1,17 @@
 Summary:	A places plugin for the Xfce panel
 Summary(pl.UTF-8):	Wtyczka places dla panelu Xfce
 Name:		xfce4-places-plugin
-Version:	1.1.0
+Version:	1.2.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://goodies.xfce.org/releases/xfce4-places-plugin/%{name}-%{version}.tar.bz2
-# Source0-md5:	b26019e355c52b4a4254ebdcf1c904ee
-Patch0:		%{name}-locale-names.patch
+Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-places-plugin/1.2/%{name}-%{version}.tar.bz2
+# Source0-md5:	f2d8c13340b3d52c5a7f6e2b9cdc55e3
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-places-plugin
 BuildRequires:	Thunar-devel >= 0.8.0
-BuildRequires:	autoconf >= 2.50
-BuildRequires:	automake
-BuildRequires:	intltool >= 0.35.5
-BuildRequires:	libtool
-BuildRequires:	xfce4-dev-tools >= 4.4.0
-BuildRequires:	xfce4-panel-devel >= 4.4.0
-Requires:	xfce4-panel >= 4.4.0
+BuildRequires:	xfce4-dev-tools >= 4.6.0
+BuildRequires:	xfce4-panel-devel >= 4.6.0
+Requires:	xfce4-panel >= 4.6.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -42,18 +37,10 @@ Nautilusem, panelem GNOME itp.
 
 %prep
 %setup -q
-%patch0 -p1
-
-mv -f po/{nb_NO,nb}.po
-mv -f po/{pt_PT,pt}.po
 
 %build
-%{__intltoolize}
-%{__libtoolize}
-%{__aclocal}
-%{__autoconf}
-%{__automake}
 %configure
+
 %{__make}
 
 %install
