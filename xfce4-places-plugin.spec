@@ -9,6 +9,9 @@ Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-places-plugin/1.2/%{nam
 # Source0-md5:	f2d8c13340b3d52c5a7f6e2b9cdc55e3
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-places-plugin
 BuildRequires:	Thunar-devel >= 0.8.0
+BuildRequires:	gettext-devel
+BuildRequires:	intltool
+BuildRequires:	pkgconfig
 BuildRequires:	xfce4-dev-tools >= 4.6.0
 BuildRequires:	xfce4-panel-devel >= 4.6.0
 Requires:	xfce4-panel >= 4.6.0
@@ -29,10 +32,10 @@ Wtyczka places przenosi dużą część funkcjonalności menu GNOME Places
 do Xfce. Wtyczka wygląda w dużej mierze jak launcher z wieloma
 elementami w menu. Główny przycisk otwiera Thunara z katalogiem
 domowym użytkownika. Przycisk ze strzałką otwiera menu z dwiema
-sekcjami: miejscami zdefiniowanymi przez system i użytkownika.
-Miejsca zdefiniowane przez system są spójne z Thunarem (włącznie z
-ikonami). Dla zakładek zdefiniowanych przez użytkownika odczytywany
-jest plik ~/.gtk-bookmarks, dzięki czemu są współdzielone z Thunarem,
+sekcjami: miejscami zdefiniowanymi przez system i użytkownika. Miejsca
+zdefiniowane przez system są spójne z Thunarem (włącznie z ikonami).
+Dla zakładek zdefiniowanych przez użytkownika odczytywany jest plik
+~/.gtk-bookmarks, dzięki czemu są współdzielone z Thunarem,
 Nautilusem, panelem GNOME itp.
 
 %prep
