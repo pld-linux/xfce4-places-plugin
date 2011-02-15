@@ -12,6 +12,7 @@ BuildRequires:	Thunar-devel >= 0.8.0
 BuildRequires:	gettext-devel
 BuildRequires:	intltool
 BuildRequires:	pkgconfig
+BuildRequires:	thunar-vfs-devel
 BuildRequires:	xfce4-dev-tools >= 4.6.0
 BuildRequires:	xfce4-panel-devel >= 4.6.0
 Requires:	xfce4-panel >= 4.6.0
