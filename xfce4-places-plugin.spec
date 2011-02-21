@@ -2,24 +2,28 @@ Summary:	A places plugin for the Xfce panel
 Summary(pl.UTF-8):	Wtyczka places dla panelu Xfce
 Name:		xfce4-places-plugin
 Version:	1.2.0
-Release:	5
+Release:	5.14
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-places-plugin/1.2/%{name}-%{version}.tar.bz2
 # Source0-md5:	f2d8c13340b3d52c5a7f6e2b9cdc55e3
 Patch0:		port-to-exo-1.patch
 Patch1:		%{name}-ui.patch
+Patch2:		%{name}-gio.patch
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-places-plugin
-BuildRequires:	Thunar-devel >= 0.8.0
+BuildRequires:	Thunar-devel >= 1.2.0
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	exo-devel >= 0.6.0
 BuildRequires:	gettext-devel
+BuildRequires:	glib2-devel >= 1:2.22.0
+BuildRequires:	gtk+2-devel >= 2:2.14.0
 BuildRequires:	intltool
+BuildRequires:	libnotify-devel >= 0.4.0
 BuildRequires:	libtool
 BuildRequires:	libxfce4ui-devel >= 4.8.0
+BuildRequires:	libxfce4util-devel >= 4.8.0
 BuildRequires:	pkgconfig
-BuildRequires:	thunar-vfs-devel
 BuildRequires:	xfce4-dev-tools >= 4.8.0
 BuildRequires:	xfce4-panel-devel >= 4.8.0
 Requires:	xfce4-panel >= 4.8.0
@@ -50,11 +54,13 @@ Nautilusem, panelem GNOME itp.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure
 
