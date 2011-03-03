@@ -1,0 +1,69 @@
+diff -ur xfce4-places-plugin-1.2.0/panel-plugin/view.c xfce4-places-plugin-1.2.0-position/panel-plugin/view.c
+--- xfce4-places-plugin-1.2.0/panel-plugin/view.c	2011-03-03 13:43:31.938573607 +0100
++++ xfce4-places-plugin-1.2.0-position/panel-plugin/view.c	2011-03-03 13:42:28.099573608 +0100
+@@ -734,6 +734,55 @@
+ }
+ 
+ static void
++pview_position_menu (GtkMenu *menu,
++                     gint *x,
++                     gint *y,
++                     gboolean *push_in,
++                     PlacesView *view)
++{
++  GtkWidget *button;
++  GtkRequisition requisition;
++  GtkOrientation orientation;
++
++  button = view->button;
++  orientation = xfce_panel_plugin_get_orientation (view->plugin);
++  gtk_widget_size_request (GTK_WIDGET (menu), &requisition);
++  gdk_window_get_origin (GTK_WIDGET (view->plugin)->window, x, y);
++
++  switch (orientation)
++    {
++    case GTK_ORIENTATION_HORIZONTAL:
++      if (*y + button->allocation.height + requisition.height > gdk_screen_height ())
++        /* Show menu above */
++        *y -= requisition.height;
++      else
++        /* Show menu below */
++        *y += button->allocation.height;
++
++      if (*x + requisition.width > gdk_screen_width ())
++        /* Adjust horizontal position */
++        *x = gdk_screen_width () - requisition.width;
++      break;
++
++    case GTK_ORIENTATION_VERTICAL:
++      if (*x + button->allocation.width + requisition.width > gdk_screen_width ())
++        /* Show menu on the right */
++        *x -= requisition.width;
++      else
++        /* Show menu on the left */
++        *x += button->allocation.width;
++
++      if (*y + requisition.height > gdk_screen_height ())
++        /* Adjust vertical position */
++        *y = gdk_screen_height () - requisition.height;
++      break;
++
++    default:
++      break;
++    }
++}
++
++static void
+ pview_open_menu(PlacesView *pd)
+ {
+     /* check if menu is needed, or it needs an update */
+@@ -745,8 +794,7 @@
+ 
+     /* popup menu */
+     gtk_menu_popup (GTK_MENU (pd->menu), NULL, NULL,
+-                    xfce_panel_plugin_position_menu,
+-                    pd->plugin, 0,
++                    (GtkMenuPositionFunc)pview_position_menu, pd, 0,
+                     gtk_get_current_event_time ());
+     
+     /* menu timeout to poll for model changes */
