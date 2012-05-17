@@ -80,6 +80,6 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
-#%attr(755,root,root) %{_bindir}/*
-#%attr(755,root,root) %{_libdir}/xfce4/panel-plugins/xfce4-places-plugin
-#%{_datadir}/xfce4/panel-plugins/places.desktop
+%attr(755,root,root) %{_bindir}/xfce4-popup-places
+%attr(755,root,root) %{_libdir}/xfce4/panel-plugins/xfce4-places-plugin
+%{_datadir}/xfce4/panel-plugins/places.desktop
