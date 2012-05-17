@@ -1,16 +1,13 @@
 Summary:	A places plugin for the Xfce panel
 Summary(pl.UTF-8):	Wtyczka places dla panelu Xfce
 Name:		xfce4-places-plugin
-Version:	1.2.0
-Release:	10
+Version:	1.3.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-places-plugin/1.2/%{name}-%{version}.tar.bz2
-# Source0-md5:	f2d8c13340b3d52c5a7f6e2b9cdc55e3
-Patch0:		port-to-exo-1.patch
-Patch1:		%{name}-ui.patch
-Patch2:		%{name}-gio.patch
-Patch3:		%{name}-position.patch
+Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-places-plugin/1.3/%{name}-%{version}.tar.bz2
+# Source0-md5:	d075fffccf44bcf09a1bfcd4e0cd38a2
+Patch0:		%{name}-position.patch
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-places-plugin
 BuildRequires:	Thunar-devel >= 1.2.0
 BuildRequires:	autoconf
@@ -54,10 +51,8 @@ Nautilusem, panelem GNOME itp.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
+# verify if still needed
+#%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -85,6 +80,6 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
-%attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/xfce4/panel-plugins/xfce4-places-plugin
-%{_datadir}/xfce4/panel-plugins/places.desktop
+#%attr(755,root,root) %{_bindir}/*
+#%attr(755,root,root) %{_libdir}/xfce4/panel-plugins/xfce4-places-plugin
+#%{_datadir}/xfce4/panel-plugins/places.desktop
