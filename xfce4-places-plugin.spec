@@ -1,13 +1,12 @@
 Summary:	A places plugin for the Xfce panel
 Summary(pl.UTF-8):	Wtyczka places dla panelu Xfce
 Name:		xfce4-places-plugin
-Version:	1.3.0
+Version:	1.6.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-places-plugin/1.3/%{name}-%{version}.tar.bz2
-# Source0-md5:	d075fffccf44bcf09a1bfcd4e0cd38a2
-Patch0:		%{name}-position.patch
+Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-places-plugin/1.6/%{name}-%{version}.tar.bz2
+# Source0-md5:	8f3ec883efb0775052eeea816bbd8a23
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-places-plugin
 BuildRequires:	Thunar-devel >= 1.2.0
 BuildRequires:	autoconf
@@ -51,8 +50,6 @@ Nautilusem, panelem GNOME itp.
 
 %prep
 %setup -q
-# verify if still needed
-#%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -70,7 +67,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -r $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/xfce4/panel/plugins/libplaces.la
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
 
 %find_lang %{name}
 
@@ -81,5 +79,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/xfce4-popup-places
-%attr(755,root,root) %{_libdir}/xfce4/panel-plugins/xfce4-places-plugin
-%{_datadir}/xfce4/panel-plugins/places.desktop
+%attr(755,root,root) %{_libdir}/xfce4/panel/plugins/libplaces.so
+%{_datadir}/xfce4/panel/plugins/places.desktop
