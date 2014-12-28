@@ -12,7 +12,7 @@ BuildRequires:	Thunar-devel >= 1.2.0
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	exo-devel >= 0.6.0
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.22.0
 BuildRequires:	gtk+2-devel >= 2:2.14.0
 BuildRequires:	intltool
