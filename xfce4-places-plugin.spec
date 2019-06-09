@@ -1,12 +1,12 @@
 Summary:	A places plugin for the Xfce panel
 Summary(pl.UTF-8):	Wtyczka places dla panelu Xfce
 Name:		xfce4-places-plugin
-Version:	1.7.0
-Release:	2
+Version:	1.8.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-places-plugin/1.7/%{name}-%{version}.tar.bz2
-# Source0-md5:	fcae9b38a8affcd82699a94991bba29b
+Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-places-plugin/1.8/%{name}-%{version}.tar.bz2
+# Source0-md5:	e3a306d927befb8afcb5212f8ab0b8c9
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-places-plugin
 BuildRequires:	Thunar-devel >= 1.6.6
 BuildRequires:	autoconf
