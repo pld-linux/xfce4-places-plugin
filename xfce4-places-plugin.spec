@@ -1,12 +1,12 @@
 Summary:	A places plugin for the Xfce panel
 Summary(pl.UTF-8):	Wtyczka places dla panelu Xfce
 Name:		xfce4-places-plugin
-Version:	1.8.1
+Version:	1.8.2
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-places-plugin/1.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	bde92cbd08f129d517524784e5060816
+# Source0-md5:	6e4caf714366a26db9a8170956a0967c
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-places-plugin
 BuildRequires:	Thunar-devel >= 1.8.9
 BuildRequires:	autoconf
@@ -68,8 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/xfce4/panel/plugins/libplaces.la
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/ur_PK
-%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/ie
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{hye,ie,ur_PK}
 
 %find_lang %{name}
 
@@ -78,7 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README TODO
+%doc AUTHORS ChangeLog NEWS README.md TODO
 %attr(755,root,root) %{_bindir}/xfce4-popup-places
 %attr(755,root,root) %{_libdir}/xfce4/panel/plugins/libplaces.so
 %{_datadir}/xfce4/panel/plugins/places.desktop
