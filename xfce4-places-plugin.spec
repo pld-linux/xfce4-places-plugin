@@ -1,30 +1,30 @@
 Summary:	A places plugin for the Xfce panel
 Summary(pl.UTF-8):	Wtyczka places dla panelu Xfce
 Name:		xfce4-places-plugin
-Version:	1.8.3
+Version:	1.8.4
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-places-plugin/1.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	89f756961b61e114d187e09bb05c6ab8
-URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-places-plugin
+Source0:	https://archive.xfce.org/src/panel-plugins/xfce4-places-plugin/1.8/%{name}-%{version}.tar.bz2
+# Source0-md5:	abd5b74cda6b3b78bfd17a4ddaff04e9
+URL:		https://goodies.xfce.org/projects/panel-plugins/xfce4-places-plugin
 BuildRequires:	Thunar-devel >= 1.8.9
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	exo-devel >= 0.12.8
+BuildRequires:	exo-devel >= 4.16.0
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.50.0
 BuildRequires:	gtk+3-devel >= 3.22.0
-BuildRequires:	intltool
-BuildRequires:	libnotify-devel >= 0.4.0
+BuildRequires:	libnotify-devel >= 0.7.0
 BuildRequires:	libtool
-BuildRequires:	libxfce4ui-devel >= 4.14.0
-BuildRequires:	libxfce4util-devel >= 4.14.0
+BuildRequires:	libxfce4ui-devel >= 4.16.0
+BuildRequires:	libxfce4util-devel >= 4.16.0
 BuildRequires:	pkgconfig
-BuildRequires:	xfce4-dev-tools >= 4.14.0
-BuildRequires:	xfce4-panel-devel >= 4.14.0
+BuildRequires:	xfce4-dev-tools >= 4.16.0
+BuildRequires:	xfce4-panel-devel >= 4.16.0
+BuildRequires:	xfconf-devel >= 4.16.0
 Requires:	gvfs
-Requires:	xfce4-panel >= 4.14.0
+Requires:	xfce4-panel >= 4.16.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
